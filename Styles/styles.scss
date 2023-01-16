@@ -1,0 +1,124 @@
+@import'https://fonts.googleapis.com/css2?family=Blinker:wght@600&display=swap';
+$font_family:'Blinker';
+$fontSize_header: 1.8rem;
+$fontColor_black:black;
+$bgColor_header_footer: rgb(211, 158, 158);
+$fontSize_footer:1.2rem;
+$fontSize_SM:1.6rem;
+$bg_main: black;
+$fontColor_main: white;
+
+
+* {
+    font-family: $font_family;
+}
+
+body{
+    background-color: $bg_main;
+}
+
+@mixin headerTA($bgColor_header_footer, $fontSize_header, $fontColor_black){
+    background-color: $bgColor_header_footer;
+    font-size: $fontSize_header;
+    .navbar-brand{
+        color:$fontColor_black;
+        font-size: $fontSize_header;
+        text-decoration: none;
+    }
+    .nav-link{
+        color: $fontColor_black;
+    }
+        .ml-auto a:hover{
+            color: white;
+        }
+}
+
+header {
+    @include headerTA($bgColor_header_footer, $fontSize_header, $fontColor_black);
+}
+
+main {
+    .link {
+        color: $fontColor_main;
+        font-size: 2rem;
+        &:hover {
+            color: $bgColor_header_footer;
+        }
+    }
+    .img-fluid {
+        border: $fontColor_main 1px solid;
+        
+    }
+    .card-img-top {
+        width: 100%;
+        height: 10rem;
+        object-fit: cover;
+        &:hover {
+            border: white 1px solid;
+            transform: scale(1.1);
+            z-index: 1;
+        }
+    }
+
+    .btn-primary {
+        background-color: $bgColor_header_footer;
+        border-color: $bgColor_header_footer;
+        color: $fontColor_black;
+        font-size: $fontSize_footer;
+        &:hover {
+            background-color: $bg_main;
+            border-color: $bg_main;
+            color: $fontColor_main;
+        }
+    }
+}
+
+
+@mixin noteTA($fontColor_main){
+    .note-title {
+        color: $fontColor_main;
+    }
+    .note-paragraph {
+        color: $fontColor_main;
+        text-align: justify;
+    }
+    .note-label {
+        color: $fontColor_main;
+    }
+}
+
+.note {
+    @include noteTA($fontColor_main);
+}
+
+@mixin contactTA($fontColor_main){
+    .contact-title {
+        color: $fontColor_main;
+    }
+    .contact-subtitle {
+        color: $fontColor_main;
+    }
+    .contact-label {
+        color: $fontColor_main;
+    }
+}
+
+.contact {
+    @include contactTA($fontColor_main);
+}
+
+@mixin footerTA ($bgColor_header_footer, $fontSize_footer, $fontColor_black, $fontSize_SM){
+    background-color: $bgColor_header_footer;
+    font-size: $fontSize_footer;
+    color:$fontColor_black;
+    .social-media {
+        color: $fontColor_black;
+        font-size: $fontSize_SM;
+    }
+}
+
+footer {
+    @include footerTA($bgColor_header_footer, $fontSize_footer, $fontColor_black, $fontSize_SM);
+}
+
+
